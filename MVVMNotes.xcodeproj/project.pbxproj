@@ -118,9 +118,9 @@
 		2077C3701E062C2200506699 /* MVVMNotes */ = {
 			isa = PBXGroup;
 			children = (
-				2077C3A11E062CAD00506699 /* ViewModel */,
-				2077C3A01E062CA300506699 /* View */,
-				2077C39F1E062C9D00506699 /* Model */,
+				2077C3A11E062CAD00506699 /* ViewModels */,
+				2077C3A01E062CA300506699 /* ViewControllers */,
+				2077C39F1E062C9D00506699 /* Models */,
 				2077C3711E062C2200506699 /* AppDelegate.swift */,
 				2077C3781E062C2200506699 /* Assets.xcassets */,
 				2077C37A1E062C2200506699 /* LaunchScreen.storyboard */,
@@ -147,29 +147,29 @@
 			path = MVVMNotesUITests;
 			sourceTree = "<group>";
 		};
-		2077C39F1E062C9D00506699 /* Model */ = {
+		2077C39F1E062C9D00506699 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				2077C3A21E062CC300506699 /* Note.swift */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
-		2077C3A01E062CA300506699 /* View */ = {
+		2077C3A01E062CA300506699 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
 				2077C3731E062C2200506699 /* NotesViewController.swift */,
 				2077C3A61E06334600506699 /* NoteViewController.swift */,
 			);
-			name = View;
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
-		2077C3A11E062CAD00506699 /* ViewModel */ = {
+		2077C3A11E062CAD00506699 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				2077C3A41E0632C900506699 /* NoteViewModel.swift */,
 			);
-			name = ViewModel;
+			name = ViewModels;
 			sourceTree = "<group>";
 		};
 		42978EBC061EBD7FF0ADB0AD /* Frameworks */ = {
