@@ -1,5 +1,5 @@
 //
-//  NotesViewController.swift
+//  NotesListViewController.swift
 //  MVVMNotes
 //
 //  Created by Evan Grossman on 12/17/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NotesViewController: UIViewController {
+class NotesListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
