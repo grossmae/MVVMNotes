@@ -16,13 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        let notesVC = NotesViewController()
+        let noteVC = NoteViewController()
+        let testNote = Note(id: "1", created: Date(), title: "Test Note", content: "This note is just a test")
+        noteVC.noteViewModel = NoteViewModel(note: testNote)
         
         window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
             window.backgroundColor = .white
             
-            window.rootViewController = UINavigationController(rootViewController: notesVC)
+            window.rootViewController = UINavigationController(rootViewController: noteVC)
             window.makeKeyAndVisible()
         }
 
