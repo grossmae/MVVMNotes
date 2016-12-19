@@ -12,6 +12,12 @@ class NotesListViewController: UIViewController {
 
     var noteVMs = [NoteViewModel]()
     
+    let addNoteBarButton: UIBarButtonItem = {
+        let addNoteBarButton = UIBarButtonItem()
+        addNoteBarButton.title = "＋"
+        return addNoteBarButton
+    }()
+    
     let notesTableView: UITableView = {
         return UITableView()
     }()
@@ -31,6 +37,8 @@ class NotesListViewController: UIViewController {
     }
     
     func setUpSubviews() {
+        
+        navigationItem.setRightBarButton(addNoteBarButton, animated: false)
         
         view.addSubview(notesTableView)
         notesTableView.snp.makeConstraints { (make) in
