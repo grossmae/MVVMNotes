@@ -24,7 +24,12 @@ class NotesListViewControllerUITests: XCTestCase {
         super.tearDown()
     }
     
-    func testNotesDisplayed() {
+    func testAddNoteButton() {
+                
+        XCUIApplication().navigationBars["MVVMNotes.NotesListView"].buttons["＋"].tap()
+    }
+    
+    func testNotesTable() {
         
         let app = XCUIApplication()
         let table = app.tables.element(boundBy: 0)
