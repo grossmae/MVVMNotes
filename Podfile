@@ -8,6 +8,7 @@ target 'MVVMNotes' do
   # Pods for MVVMNotes
 
   pod 'SnapKit', '~> 3.0.2'
+  pod 'RealmSwift'
 
   target 'MVVMNotesTests' do
     inherit! :search_paths
