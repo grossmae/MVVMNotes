@@ -6,11 +6,11 @@
 //  Copyright © 2016 Evan Grossman. All rights reserved.
 //
 
-import Foundation
+import RealmSwift
 
-struct Note {
-    let id: String
-    let created: Date
-    let title: String
-    let content: String
+class Note: Object {
+    dynamic var id: String = NSUUID().uuidString
+    dynamic var created: Date = Date()
+    dynamic var title: String = ""
+    dynamic var content: String = ""
 }
