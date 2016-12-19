@@ -40,8 +40,6 @@ class NotesListViewController: UIViewController {
     
     func fetchNotes() {
         
-        let testNote = Note(id: "1", created: Date(), title: "Test Note", content: "This note is just a test")
-        noteVMs.append(NoteViewModel(note: testNote))
     }
 
 }
