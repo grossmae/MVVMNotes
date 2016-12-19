@@ -29,6 +29,9 @@ class NotesListViewController: UIViewController {
         
         setUpSubviews()
         
+        addNoteBarButton.target = self
+        addNoteBarButton.action = #selector(addNotePressed)
+        
         notesTableView.delegate = self
         notesTableView.dataSource = self
         notesTableView.register(NoteTableViewCell.self, forCellReuseIdentifier: noteCellIdentifier)
@@ -47,6 +50,12 @@ class NotesListViewController: UIViewController {
     }
     
     func fetchNotes() {
+        
+    }
+    
+    func addNotePressed() {
+        let editNoteVC = EditNoteViewController()
+        present(UINavigationController(rootViewController: editNoteVC), animated: true, completion: nil)
         
     }
 

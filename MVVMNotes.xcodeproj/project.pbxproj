@@ -18,6 +18,7 @@
 		2077C3A91E06354600506699 /* NoteViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077C3A81E06354600506699 /* NoteViewModelTests.swift */; };
 		2077C3AC1E064EFA00506699 /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077C3AB1E064EFA00506699 /* NoteTableViewCell.swift */; };
 		2077C3AE1E0654DA00506699 /* NotesListViewControllerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077C3AD1E0654DA00506699 /* NotesListViewControllerUITests.swift */; };
+		2077C3B21E07BF1000506699 /* EditNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2077C3B11E07BF1000506699 /* EditNoteViewController.swift */; };
 		215703B681D2438CFAB598AC /* Pods_MVVMNotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 186DD58A551130C887119D31 /* Pods_MVVMNotesTests.framework */; };
 		88EE7AD2354759943734619F /* Pods_MVVMNotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4895E876DA85F7333C57C89A /* Pods_MVVMNotesUITests.framework */; };
 		8AEA94756DCB15510016F531 /* Pods_MVVMNotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3349DF79392F7B0608C32185 /* Pods_MVVMNotes.framework */; };
@@ -59,6 +60,7 @@
 		2077C3A81E06354600506699 /* NoteViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteViewModelTests.swift; sourceTree = "<group>"; };
 		2077C3AB1E064EFA00506699 /* NoteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
 		2077C3AD1E0654DA00506699 /* NotesListViewControllerUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotesListViewControllerUITests.swift; sourceTree = "<group>"; };
+		2077C3B11E07BF1000506699 /* EditNoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditNoteViewController.swift; sourceTree = "<group>"; };
 		3349DF79392F7B0608C32185 /* Pods_MVVMNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MVVMNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		368A9B3B9AA5B3F61A803CF4 /* Pods-MVVMNotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMNotesUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMNotesUITests/Pods-MVVMNotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		48238CDF745AE4EE9917BEE2 /* Pods-MVVMNotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVMNotesTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVMNotesTests/Pods-MVVMNotesTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				2077C3731E062C2200506699 /* NotesListViewController.swift */,
 				2077C3A61E06334600506699 /* NoteViewController.swift */,
+				2077C3B11E07BF1000506699 /* EditNoteViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -492,6 +495,7 @@
 				2077C3A51E0632C900506699 /* NoteViewModel.swift in Sources */,
 				2077C3741E062C2200506699 /* NotesListViewController.swift in Sources */,
 				2077C3721E062C2200506699 /* AppDelegate.swift in Sources */,
+				2077C3B21E07BF1000506699 /* EditNoteViewController.swift in Sources */,
 				2077C3A71E06334600506699 /* NoteViewController.swift in Sources */,
 				2077C3A31E062CC300506699 /* Note.swift in Sources */,
 				2077C3AC1E064EFA00506699 /* NoteTableViewCell.swift in Sources */,

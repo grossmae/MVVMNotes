@@ -25,8 +25,18 @@ class NotesListViewControllerUITests: XCTestCase {
     }
     
     func testAddNoteButton() {
-                
-        XCUIApplication().navigationBars["MVVMNotes.NotesListView"].buttons["＋"].tap()
+        
+        
+        let app = XCUIApplication()
+        let addNoteButton = app.navigationBars["MVVMNotes.NotesListView"].buttons["＋"]
+        addNoteButton.tap()
+        
+        let mvvmnotesEditnoteviewNavigationBar = app.navigationBars["MVVMNotes.EditNoteView"]
+        mvvmnotesEditnoteviewNavigationBar.buttons["Cancel"].tap()
+        
+        addNoteButton.tap()
+        mvvmnotesEditnoteviewNavigationBar.buttons["Done"].tap()
+  
     }
     
     func testNotesTable() {
