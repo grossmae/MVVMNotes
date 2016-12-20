@@ -7,25 +7,33 @@
 //
 
 import XCTest
+import RealmSwift
 
 class NotesListViewControllerUITests: XCTestCase {
+    
+    let realm = try! Realm()
     
     override func setUp() {
         super.setUp()
         
+        try! realm.write {
+            realm.deleteAll()
+        }
+        
         continueAfterFailure = false
         XCUIApplication().launch()
-        
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        
+        try! realm.write {
+            realm.deleteAll()
+        }
+        
         super.tearDown()
     }
     
     func testAddNoteButton() {
-        
         
         let app = XCUIApplication()
         let addNoteButton = app.navigationBars["MVVMNotes.NotesListView"].buttons["＋"]
@@ -36,13 +44,14 @@ class NotesListViewControllerUITests: XCTestCase {
         
         addNoteButton.tap()
         mvvmnotesEditnoteviewNavigationBar.buttons["Done"].tap()
+        
+        
   
     }
     
     func testNotesTable() {
         
-        let app = XCUIApplication()
-        let table = app.tables.element(boundBy: 0)
-        XCTAssert(table.cells.count == 0)
+        let notesTable = XCUIApplication().tables["Empty list"]
+        XCTAssert(notesTable.cells.count == 0)
     }
 }

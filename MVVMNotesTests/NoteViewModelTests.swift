@@ -23,7 +23,10 @@ class NoteViewModelTest: XCTestCase {
     override func setUp() {
         super.setUp()
         let date = dateFormatter.date(from: "1999-09-01")!
-        let note = Note(id: "1", created:date , title: "Test Note", content: "This is a test note")
+        let note = Note()
+        note.title = "Test Note"
+        note.content = "This is a test note"
+        note.created = date
         noteVM = NoteViewModel(note: note)
     }
     

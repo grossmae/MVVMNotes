@@ -8,6 +8,7 @@
 
 import UIKit
 import SnapKit
+import RealmSwift
 
 class EditNoteViewController: UIViewController {
     
@@ -46,7 +47,7 @@ class EditNoteViewController: UIViewController {
         super.viewDidLoad()
         
         if note == nil {
-            note = NoteViewModel(note: Note(id: "", created: Date(), title: "", content: ""))
+            note = NoteViewModel(note: Note())
         }
         
         setUpSubviews()
@@ -93,6 +94,14 @@ class EditNoteViewController: UIViewController {
     }
     
     func donePressed() {
+        let realm = try! Realm()
+        let newNote = Note()
+        newNote.title = titleTextField.text ?? ""
+        newNote.content = contentTextView.text
+        try! realm.write {
+            realm.add(newNote)
+        }
+        
         dismiss(animated: true, completion: nil)
     }
 }

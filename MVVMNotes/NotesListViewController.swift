@@ -7,8 +7,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 class NotesListViewController: UIViewController {
+    
+    let realm = try! Realm()
+    var notes: Results<Note> {
+        get {
+            return realm.objects(Note.self)
+        }
+    }
 
     var noteVMs = [NoteViewModel]()
     
@@ -36,6 +44,11 @@ class NotesListViewController: UIViewController {
         notesTableView.dataSource = self
         notesTableView.register(NoteTableViewCell.self, forCellReuseIdentifier: noteCellIdentifier)
         
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         fetchNotes()
     }
     
@@ -51,6 +64,13 @@ class NotesListViewController: UIViewController {
     
     func fetchNotes() {
         
+        noteVMs.removeAll()
+        
+        for note in notes {
+            let noteVM = NoteViewModel(note: note)
+            noteVMs.append(noteVM)
+        }
+        notesTableView.reloadData()
     }
     
     func addNotePressed() {
@@ -62,7 +82,9 @@ class NotesListViewController: UIViewController {
 }
 
 extension NotesListViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 }
 
 extension NotesListViewController: UITableViewDataSource {
