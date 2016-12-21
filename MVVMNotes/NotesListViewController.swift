@@ -70,6 +70,7 @@ class NotesListViewController: UIViewController {
             let noteVM = NoteViewModel(note: note)
             noteVMs.append(noteVM)
         }
+        
         notesTableView.reloadData()
     }
     
@@ -82,8 +83,17 @@ class NotesListViewController: UIViewController {
 }
 
 extension NotesListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let note = notes[indexPath.row]
+            try! realm.write {
+                realm.delete(note)
+            }
+            fetchNotes()
+            tableView.reloadData()            
+        }
     }
 }
 
@@ -97,5 +107,9 @@ extension NotesListViewController: UITableViewDataSource {
         let noteCell = tableView.dequeueReusableCell(withIdentifier: noteCellIdentifier) as! NoteTableViewCell
         noteCell.noteVM = noteVMs[indexPath.row]
         return noteCell
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
     }
 }
